@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pingpilot"
+version = "0.1.0"
+description = "Resilient, resumable outreach automation (WhatsApp Web today, more channels tomorrow)"
+requires-python = ">=3.9"
+dependencies = [
+    "playwright>=1.44",
+    "gspread>=5.12",
+    "requests>=2.31",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+pingpilot = "pingpilot.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
