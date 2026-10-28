@@ -9,7 +9,7 @@ although the model knows which element to click but it picks the wrong.
 
 ## Problem initiation :
 
-While automating a couple of tasks within the organization (justyouapparels.in), the creation of workflow was
+While automating a couple of tasks within the organization (https://justyouapparels.in), the creation of workflow was
 itself a tedious process. Tried to implement these task directly using multimodal webagents like stagehand and 
 browseruse but were failing and clicking the wrong button. Found that most of them uses images and plain DOM text
 for there step prediction.
