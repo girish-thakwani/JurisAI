@@ -12,7 +12,7 @@ for there step prediction.
 
 # Research :
 
-Found the dataset from Mind2Web(https://osu-nlp-group.github.io/Mind2Web/) and did some failure analysis 
+Found the dataset from Mind2Web(https://osu-nlp-group.github.io/Mind2Web/) and analysed 
 and funneled that the issue is not action or element prediction but actually element grounding. Most of the
 systems turns the page DOM into plain text and hope a large model infers the structure.
 
