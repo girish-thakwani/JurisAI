@@ -1,0 +1,22 @@
+import re
+from playwright.sync_api import Playwright, sync_playwright, expect
+
+
+def run(playwright: Playwright) -> None:
+    browser = playwright.chromium.launch(headless=False)
+    context = browser.new_context()
+    page = context.new_page()
+    page.goto("https://web.whatsapp.com/")
+    page.get_by_role("button", name="Continue").click()
+    page.get_by_role("textbox", name="Search or start a new chat").click()
+    page.get_by_role("textbox", name="Search or start a new chat").fill("Note")
+    page.get_by_test_id("conversation-compose-box-input").click()
+    page.get_by_test_id("conversation-compose-box-input").fill("hello")
+
+    # ---------------------
+    context.close()
+    browser.close()
+
+
+with sync_playwright() as playwright:
+    run(playwright)
